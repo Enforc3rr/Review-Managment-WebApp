@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="inclusion::bootstrapCompiler">
+	<title>HOME PAGE</title>
+</head>
+<body>
+<nav th:replace="inclusion::navBar"></nav>
+	<h1>MAIN MENU</h1>
+	<ul>
+		<li><form action="/user/login"><span><h1>USER CLICK HERE TO LOGIN =></h1></span><input type="submit" value="USER LOGIN"></form></li>
+		<li><form action="/user/userSignup"><span><h1>USER CLICK HERE TO SIGNUP =></h1></span><input type="submit" value="USER SIGNUP"></form></li>
+		<li><form action="/admin/adminlogin"><span><h1>ADMIN CLICK HERE TO LOGIN =></h1></span><input type="submit" value="ADMIN LOGIN"></form></li>	
+	</ul>
+
+</body>
+</html>

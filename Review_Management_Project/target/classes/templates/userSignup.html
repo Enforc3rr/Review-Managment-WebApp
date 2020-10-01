@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head th:replace = "inclusion::bootstrapCompiler">
+	<title>USER SIGN UP</title>
+</head>
+<body>
+<nav th:replace="inclusion::navBar"></nav>
+	<form action="/user/saveUser" method="Post" th:object="${userData}">
+		<span><h3>FIRST NAME:</h3></span><input type="text" name="firstName" th:field="*{firstName}" ><br>
+		<span><h3>LAST NAME:</h3></span><input type="text" name="lastName" th:field="*{lastName}" ><br>
+		<span><h3>Email:</h3></span><input type="Email" name="userEmail" th:field="*{userEmail}"  ><br>
+		<span><h3>UserName:</h3></span><input type="text" name="userName" th:field="*{userName}" ><br>
+		<span><h3>PASSWORD:</h3></span><input type="PASSWORD" name="userPassword" th:field="*{userPassword}" ><br>
+		<span><h3>ADDRESS:</h3></span><input type="text" name="userAddress" th:field="*{userAddress}" ><br>
+		<span><h3>PHONE NUMBER:</h3></span><input type="text" name="userPhoneNumber" th:field="*{userPhone}" ><br><hr>
+		<input type="submit" value="CLICK HERE TO SIGNUP">
+	</form>
+
+</body>
+</html>

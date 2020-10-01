@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace = "inclusion::bootstrapCompiler"> 
+<title>USER DETAILS</title>
+</head>
+<body>
+<nav th:replace = "inclusion::navBar"></nav>
+<br>
+<h1>USER TABLE</h1><br>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
+      <th scope="col">Address</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr th:each = "userDetails : ${userValue}">
+      <th scope="row" th:text = "${userDetails.userId}"/>
+      <td th:text = "${userDetails.firstName}"/>
+      <td th:text = "${userDetails.lastName}" />
+      <td th:text = "${userDetails.userName}" />
+      <td th:text = "${userDetails.userEmail}"/>
+      <td th:text = "${userDetails.userAddress}"/>
+      </tr>
+  </tbody>
+</table>
+</body>
+</html>

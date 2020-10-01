@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head th:replace ="inclusion::bootstrapCompiler">
+	<title>Add Book Review</title>
+</head>
+<body>
+	<form action="/book/bookreviewsave" method="POST" th:object = "${reviewObj}">
+		<ul>
+		<li><h3>Select Your UserName :</h3><br>
+		<select th:field = "*{reviewAddedBy}">
+			<option th:each="userObj :${userList}"
+			         th:value = "${userObj.UserName}"
+			         th:text = "${userObj.userName}">
+			</option>
+			
+		</select></li>
+			<li><h3>Select Book Whoose Review You Want To Add :</h3><br>
+		<select th:field = "*{bookName}">
+			<option th:each=" bookObj :${bookList}"
+			         th:value = "${bookObj.nameOfBook}"
+			         th:text = "${bookObj.nameOfBook}">
+			</option>
+			
+		</select></li>
+		<li>
+			<h3>Write Your Review Here :</h3>
+			<input type="text" style="width:500pt;height: 100pt" th:field="*{review}">
+			</li>
+	</ul>
+	<br><br>
+<input type="submit" value="CLICK HERE TO ADD Review">
+</form>
+</body>
+</html>
