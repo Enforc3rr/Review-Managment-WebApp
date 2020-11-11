@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thyeleaf.org">
+<head>
+<title>ADD BOOK</title>
+</head>
+<h1>ADD BOOK HERE -></h1>
+<body>
+<form th:action = "@{/book/savebook}" method = "POST" th:object = "${bookData}">
+		<span><h3>NAME OF BOOK:</h3></span><input type="text" th:field="*{bookName}" ><br>
+		<span><h3>AUTHOR OF BOOK:</h3></span><input type="text" th:field="*{author}" ><br>
+		<span><h3>GENRE OF BOOK:</h3></span><input type="text" th:field="*{bookGenre}" ><br>
+		<br>
+		<br>
+		<input type="submit" value="CLICK HERE TO ADD BOOK">
+
+</form>
+</body>
+</html>
